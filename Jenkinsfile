@@ -33,9 +33,9 @@ pipeline {
                         steps{
                 script {
                     archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+                        }
                 }
         }
-                }
           //stage('SonarQube Analysis') {
                   //steps{
             //withSonarQubeEnv() {
