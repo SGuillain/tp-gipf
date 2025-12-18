@@ -1,8 +1,8 @@
 
 pipeline {
-        agent none
+        agent any
         stages {
-            stage('agent any'){
+            stage('compile'){
           steps {
                 script { 
                     sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 compileJava '
