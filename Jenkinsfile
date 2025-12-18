@@ -1,8 +1,6 @@
 pipeline {
 
-    agent {
-        label 'agentId'
-    }
+    agent any
 
     triggers {
         cron('H */8 * * *') //regular builds
