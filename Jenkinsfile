@@ -30,6 +30,7 @@ pipeline {
                     }
                 }
                 stage('artifact'){
+                        steps{
                 post {
                 always {
                     archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
@@ -37,6 +38,7 @@ pipeline {
                 }
             }
         }
+                }
           //stage('SonarQube Analysis') {
                   //steps{
             //withSonarQubeEnv() {
