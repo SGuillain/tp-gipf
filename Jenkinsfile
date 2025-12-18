@@ -1,7 +1,7 @@
 pipeline {
 
     agent {
-        agent any
+        label 'agentId'
     }
 
     triggers {
