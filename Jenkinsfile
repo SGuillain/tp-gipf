@@ -17,7 +17,7 @@ pipeline {
         }
     }
     
-    node {
+node {
   stage('SCM') {
     checkout scm
       
