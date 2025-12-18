@@ -12,7 +12,7 @@ pipeline {
                  stage('Unit & Integration Tests') {
             steps {
                 script {
-                        sh './gradlew clean test --no-daemon' //run a gradle task
+                        sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 clean test --no-daemon' //run a gradle task
                 }
             }
         }
