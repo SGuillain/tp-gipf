@@ -15,11 +15,10 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Analysis') {
+            withSonarQubeEnv() {
+              sh "./gradlew sonar"
+            }
+        }
     }
-    
-    stage('SonarQube Analysis') {
-    withSonarQubeEnv() {
-      sh "./gradlew sonar"
-    }
-  }
 }
