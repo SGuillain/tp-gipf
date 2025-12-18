@@ -1,22 +1,18 @@
+
 pipeline {
-
-    agent any
-
-    triggers {
-    }
-
-    stages{
-      stage('agent any'){
+        agent none
+        stages {
+            stage('agent any'){
           steps {
                 script { 
                     sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 compileJava '
                 }
             }
         }
-        stage('SonarQube Analysis') {
+          stage('SonarQube Analysis') {
             withSonarQubeEnv() {
               sh "./gradlew sonar"
             }
         }
-    }
-}
+        }
+      }
