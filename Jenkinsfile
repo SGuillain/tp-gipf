@@ -33,7 +33,6 @@ pipeline {
                         steps{
                 script {
                     archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-                    junit 'build/reports/**/*.xml'
                 }
         }
                 }
